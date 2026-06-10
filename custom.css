@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Pneumašiny.cz — Shoptet design layer (template-11) | Vlastní CSS / head <style>
+   Overrides the LIVE template's real selectors (inspected on 798261.myshoptet.com).
+   Reproduces the pneumasiny/ design system: white stage, Archivo+Inter, RTT red
+   + bronze-gold, square 3px cards. Upgrade-safe (no core edits). Czech typography.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --pm-bg:#fff;--pm-alt:#f7f5f0;--pm-ink:#17150f;--pm-ink2:#33302a;--pm-muted:#6a655b;
+  --pm-line:rgba(0,0,0,.13);--pm-line2:rgba(0,0,0,.07);--pm-red:#a81d24;--pm-red2:#c0212a;
+  --pm-gold:#8a6a2c;--pm-gold-l:#c9a96a;--pm-tile:#f1eee8;--pm-dark:#121317;--pm-r:3px;
+  --pm-display:'Archivo','Inter',sans-serif;--pm-sans:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+/* ---- base type ---- */
+body{font-family:var(--pm-sans);color:var(--pm-ink);background:var(--pm-bg)}
+h1,h2,h3,h4,.category-title,.p-detail h1,.product .name,.cms-page h1{font-family:var(--pm-display);letter-spacing:-.01em;color:var(--pm-ink)}
+a{color:var(--pm-ink)}a:hover{color:var(--pm-red)}
+.btn{border-radius:var(--pm-r);font-weight:600;letter-spacing:.04em}
+/* ---- conversion / primary buttons (add-to-cart) ---- */
+.btn-conversion,.add-to-cart-button,.btn-primary{background:var(--pm-red)!important;border-color:var(--pm-red)!important;color:#fff!important;text-transform:uppercase;letter-spacing:.06em}
+.btn-conversion:hover,.add-to-cart-button:hover,.btn-primary:hover{background:var(--pm-red2)!important;border-color:var(--pm-red2)!important}
+/* ---- top utility bar ---- */
+.header-top{background:var(--pm-alt);border-bottom:1px solid var(--pm-line2);font-size:.76rem;letter-spacing:.04em;color:var(--pm-muted)}
+.header-top a{color:var(--pm-muted)}.header-top a:hover{color:var(--pm-ink)}
+/* ---- search (Alza-style) ---- */
+.search input,.search .form-control{border:1px solid var(--pm-line);border-radius:var(--pm-r) 0 0 var(--pm-r);height:44px}
+.search input:focus{border-color:var(--pm-gold-l);box-shadow:none}
+.search .btn,.search button,.btn-default{background:var(--pm-ink)!important;border-color:var(--pm-ink)!important;color:#fff!important;text-transform:uppercase;letter-spacing:.06em}
+.search .btn:hover,.search button:hover,.btn-default:hover{background:var(--pm-red)!important;border-color:var(--pm-red)!important}
+/* ---- main menu / mega-menu ---- */
+.navigation-in.menu,.navigation-in{border-bottom:1px solid var(--pm-line)}
+.menu-level-0>li>a,.navigation-in.menu a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--pm-ink2)}
+.menu-level-0>li>a:hover{color:var(--pm-red)}
+/* ---- breadcrumb ---- */
+.breadcrumbs-wrapper,.breadcrumbs{font-size:.74rem;letter-spacing:.04em;color:var(--pm-muted)}
+.breadcrumbs-wrapper a:hover{color:var(--pm-red)}
+/* ---- category heading + subcategory tiles ---- */
+.category-title{font-weight:800;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.navigation-buttons a,.navigation-buttons .navigation-button{border:1px solid var(--pm-line);border-radius:var(--pm-r);transition:.2s;font-weight:600}
+.navigation-buttons a:hover{border-color:var(--pm-gold-l);color:var(--pm-red)}
+/* ---- toolbar (sort + count) ---- */
+.category-top{border-bottom:1px solid var(--pm-line2);color:var(--pm-muted)}
+/* ---- faceted filter sidebar ---- */
+.box-filters{border:1px solid var(--pm-line);border-radius:var(--pm-r);background:#fff}
+.box-filters .box-heading,.box-filters h3,.box-filters .filter-name{font-family:var(--pm-display);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pm-ink)}
+.box-filters input[type=checkbox]{accent-color:var(--pm-red)}
+.box-filters .selected,.box-filters .active{color:var(--pm-red)}
+/* ---- product grid + card ---- */
+.products-block,.products{gap:18px}
+.product{border:1px solid var(--pm-line);border-radius:var(--pm-r);transition:.2s;background:#fff}
+.product:hover{border-color:var(--pm-gold-l);box-shadow:0 10px 30px rgba(0,0,0,.08);transform:translateY(-3px)}
+.product a.image{background:var(--pm-tile);display:block}
+.product a.name,.products-block a.name{font-family:var(--pm-display);font-weight:600;font-size:1.04rem;line-height:1.25;color:var(--pm-ink)}
+.product:hover a.name{color:var(--pm-red)}
+.product .price-final,.price-final{font-family:var(--pm-display);font-weight:700;color:var(--pm-ink)}
+.availability{color:var(--pm-gold);font-weight:600}
+.extra-flags .flag,.flag{border-radius:2px;letter-spacing:.06em;text-transform:uppercase;font-size:.62rem}
+/* ---- pagination ---- */
+nav.pagination .page-item.active .page-link,nav.pagination .active a{background:var(--pm-red);border-color:var(--pm-red);color:#fff}
+nav.pagination a:hover{color:var(--pm-red)}
+/* ---- product detail ---- */
+.p-detail h1{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem)}
+.p-main-image{background:var(--pm-tile);border-radius:var(--pm-r)}
+.p-final-price-wrapper{border-top:2px solid var(--pm-ink);padding-top:14px}
+.p-final-price-wrapper strong.price-final,.p-detail strong.price-final{font-family:var(--pm-display);font-weight:800;color:var(--pm-ink)}
+.p-short-description{color:var(--pm-ink2);line-height:1.7}
+table.detail-parameters{width:100%;border-collapse:collapse}
+table.detail-parameters th,table.detail-parameters td{text-align:left;font-size:.9rem;padding:9px 12px;border-bottom:1px solid var(--pm-line2);vertical-align:top}
+table.detail-parameters th{color:var(--pm-muted);font-weight:500;width:52%}
+table.detail-parameters td{color:var(--pm-ink);font-weight:600}
+/* ---- made-to-order / 20% deposit notice ---- */
+.pm-deposit{background:var(--pm-alt);border:1px solid var(--pm-gold-l);border-left:3px solid var(--pm-red);border-radius:var(--pm-r);padding:13px 16px;margin:16px 0;font-size:.9rem;color:var(--pm-ink2);line-height:1.55}
+.pm-deposit b{color:var(--pm-red)}
+/* ---- footer ---- */
+.footer{background:var(--pm-dark);color:#bdb8ad;border-top:3px solid var(--pm-red)}
+.footer a{color:#bdb8ad}.footer a:hover{color:#fff}
+.footer h3,.footer h4,.footer .footer-heading{font-family:var(--pm-display);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pm-gold-l)}
+/* ---- a11y / motion ---- */
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--pm-gold-l);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
