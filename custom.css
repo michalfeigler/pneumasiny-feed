@@ -11,9 +11,11 @@
   --pm-gold:#8a6a2c;--pm-gold-l:#c9a96a;--pm-tile:#f1eee8;--pm-dark:#121317;--pm-r:3px;
   --pm-display:'Archivo','Inter',sans-serif;--pm-sans:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
-/* ---- base type ---- */
-body{font-family:var(--pm-sans);color:var(--pm-ink);background:var(--pm-bg)}
-h1,h2,h3,h4,.category-title,.p-detail h1,.product .name,.cms-page h1{font-family:var(--pm-display);letter-spacing:-.01em;color:var(--pm-ink)}
+/* ---- base type (force brand fonts over Tango's Exo 2 / Source Sans 3) ---- */
+body,input,button,select,textarea,.basket-i,p,li,td,a,span,div{font-family:var(--pm-sans)}
+body{color:var(--pm-ink);background:var(--pm-bg)}
+h1,h2,h3,h4,h5,.category-title,.p-detail h1,.product .name,.product-name,a.name,.cms-page h1,.main-heading,.site-name{font-family:var(--pm-display)!important;letter-spacing:-.01em;color:var(--pm-ink)}
+body,.p-detail,.products-block,.footer,.content{font-family:var(--pm-sans)!important}
 a{color:var(--pm-ink)}a:hover{color:var(--pm-red)}
 .btn{border-radius:var(--pm-r);font-weight:600;letter-spacing:.04em}
 /* ---- conversion / primary buttons (add-to-cart) ---- */
@@ -27,19 +29,14 @@ a{color:var(--pm-ink)}a:hover{color:var(--pm-red)}
 .search input:focus{border-color:var(--pm-gold-l);box-shadow:none}
 .search .btn,.search button,.btn-default{background:var(--pm-ink)!important;border-color:var(--pm-ink)!important;color:#fff!important;text-transform:uppercase;letter-spacing:.06em}
 .search .btn:hover,.search button:hover,.btn-default:hover{background:var(--pm-red)!important;border-color:var(--pm-red)!important}
-/* ---- main menu / mega-menu : ink bar, light tracked labels, gold hover ---- */
-.navigation-in.menu,.navigation-in,.header .navigation-in,#navigation .navigation-in{background:var(--pm-ink)!important;border-bottom:none!important}
-/* top-level horizontal bar = ul.menu-level-1 (template root is 62.5% → use px).
-   NOTE: link text sits in a <b>; the template sets font-size on that <b>, so the
-   <b> must be targeted directly (the <a> rule alone is ignored). */
+/* ---- main menu (Tango: keep it clean & airy — no heavy bar; ink labels, gold/red hover).
+   Link text sits in a <b>; Tango sizes the <b>, so target it directly. Root is 62.5% → px. */
+.navigation-in.menu,.navigation-in{background:transparent!important;border:none!important}
 ul.menu-level-1{background:transparent!important}
-ul.menu-level-1>li>a{color:rgba(255,255,255,.92)!important}
-ul.menu-level-1>li>a b{font-size:13px!important;letter-spacing:.02em;text-transform:none;font-weight:600;color:rgba(255,255,255,.92)!important}
-ul.menu-level-1>li>a:hover b{color:var(--pm-gold-l)!important}
-ul.menu-level-1>li>a:hover{background:rgba(255,255,255,.06)}
-ul.menu-level-1>li.active>a b{color:#fff!important}
-/* dropdown panel = menu-level-2 : white bg, ink text */
-.menu-level-2,.submenu{background:#fff!important}
+ul.menu-level-1>li>a b{font-size:13px!important;letter-spacing:.12em!important;text-transform:uppercase;font-weight:600;color:var(--pm-ink)!important}
+ul.menu-level-1>li>a:hover b,ul.menu-level-1>li.active>a b{color:var(--pm-red)!important}
+/* dropdown panel = menu-level-2 : white card, ink text, red hover */
+.menu-level-2,.submenu{background:#fff!important;border:1px solid var(--pm-line2)!important;box-shadow:0 18px 40px -20px rgba(20,15,5,.25)!important}
 .menu-level-2 a,.menu-level-2 a b,.submenu a{color:var(--pm-ink2)!important;font-size:13px!important;text-transform:none;letter-spacing:0}
 .menu-level-2 a:hover,.menu-level-2 a:hover b,.submenu a:hover{color:var(--pm-red)!important;background:var(--pm-alt)!important}
 /* ---- breadcrumb ---- */
