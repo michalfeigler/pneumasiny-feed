@@ -105,12 +105,27 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .pm-home .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border-radius:3px;border:1px solid transparent;transition:.2s}
 .pm-home .btn-red{background:var(--pm-red);color:#fff!important}.pm-home .btn-red:hover{background:var(--pm-red2)}
 .pm-home .btn-ghost{border-color:rgba(0,0,0,.2);color:var(--pm-ink)}.pm-home .btn-ghost:hover{border-color:var(--pm-ink)}
-.pmh-hero{background:linear-gradient(120deg,#f7f5f0 0%,#fff 60%);border-bottom:1px solid var(--pm-line)}
-.pmh-hero .in{max-width:1280px;margin:0 auto;padding:72px 28px}
-.pmh-hero h1{font-family:var(--pm-display);font-weight:800;font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.02;letter-spacing:-.01em;max-width:16ch;margin:18px 0;color:var(--pm-ink)}
+.pmh-hero{background:linear-gradient(120deg,#f7f5f0 0%,#fbfaf7 50%,#fff 100%);border-bottom:1px solid var(--pm-line)}
+.pmh-hero .in{max-width:1280px;margin:0 auto;padding:64px 28px}
+.pmh-hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.pmh-hero-text{min-width:0}
+.pmh-hero h1{font-family:var(--pm-display);font-weight:800;font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.03;letter-spacing:-.015em;max-width:15ch;margin:16px 0;color:var(--pm-ink)}
 .pmh-hero h1 em{font-style:normal;color:var(--pm-red)}
-.pmh-hero p{max-width:48ch;color:var(--pm-ink2);font-size:1.08rem;margin-bottom:28px}
+.pmh-hero p{max-width:46ch;color:var(--pm-ink2);font-size:1.05rem;margin-bottom:28px}
 .pmh-cta{display:flex;gap:12px;flex-wrap:wrap}
+/* hero featured-machine card */
+.pmh-hero-media{display:flex;justify-content:flex-end}
+.pmh-hero-card{position:relative;background:#fff;border:1px solid var(--pm-line);border-radius:12px;box-shadow:0 44px 80px -44px rgba(20,15,5,.4);width:100%;max-width:480px;overflow:hidden}
+.pmh-hero-imgwrap{height:320px;display:flex;align-items:center;justify-content:center;padding:30px 34px}
+.pmh-hero-imgwrap img{max-width:100%;max-height:100%;width:auto;object-fit:contain;mix-blend-mode:multiply}
+.pmh-tag{position:absolute;top:16px;left:16px;z-index:2;background:var(--pm-red);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+.pmh-hero-cap{border-top:1px solid var(--pm-line2);background:var(--pm-alt);padding:16px 24px;display:flex;flex-direction:column;gap:2px}
+.pmh-hero-cap b{font-family:var(--pm-display);font-weight:700;font-size:1.02rem;color:var(--pm-ink)}
+.pmh-hero-cap span{font-size:.76rem;color:var(--pm-muted);letter-spacing:.03em}
+/* brand wordmark (header context: template root is 62.5%, so use px) */
+.pm-wordmark{display:inline-block;font-family:'Archivo',var(--pm-display),sans-serif;font-weight:800;font-size:27px;line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;color:#17150f;white-space:nowrap}
+.pm-wordmark em{font-style:normal;color:#a81d24;font-weight:800}
+.pm-wordmark-sub{display:block;font-size:9px;font-weight:600;letter-spacing:.16em;color:#8a6a2c;margin-top:3px}
 .pmh-stats{display:flex;margin-top:44px;border-top:1px solid var(--pm-line);max-width:760px}
 .pmh-stats div{flex:1;padding:18px 24px 0;border-left:1px solid var(--pm-line2)}
 .pmh-stats div:first-child{border-left:0;padding-left:0}
@@ -142,4 +157,5 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .pmh-step h4{font-family:var(--pm-display);font-weight:600;font-size:1.05rem;color:#fff;margin:6px 0}
 .pmh-step p{font-size:.84rem;color:#bdb8ad;margin:0}
 @media(max-width:1080px){.pmh-brands,.pmh-cats,.pmh-usp,.pmh-steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.pmh-brands,.pmh-cats,.pmh-usp,.pmh-steps{grid-template-columns:1fr}.pmh-stats{flex-wrap:wrap}.pmh-stats div{flex:1 0 50%;border-left:0;padding-left:0}}
+@media(max-width:900px){.pmh-hero-grid{grid-template-columns:1fr;gap:36px}.pmh-hero-media{justify-content:flex-start}.pmh-hero-card{max-width:420px}.pmh-hero-imgwrap{height:260px}.pm-wordmark-sub{display:none}}
+@media(max-width:560px){.pmh-brands,.pmh-cats,.pmh-usp,.pmh-steps{grid-template-columns:1fr}.pmh-stats{flex-wrap:wrap}.pmh-stats div{flex:1 0 50%;border-left:0;padding-left:0}.pm-wordmark{font-size:22px}}

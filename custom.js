@@ -43,6 +43,7 @@
 
   /* ---- Homepage: inject pristine markup (bypasses TinyMCE mangling) ------ */
   var CDN = "https://cdn.jsdelivr.net/gh/michalfeigler/pneumasiny-feed@main/img/logos/";
+  var PCDN = "https://cdn.jsdelivr.net/gh/michalfeigler/pneumasiny-feed@main/img/products/";
   var BRANDS = [
     ["zvedaky", "mb-engineering.png", "M&amp;B Engineering"],
     ["montazni-stroje", "mondolfo-ferro.png", "Mondolfo Ferro"],
@@ -82,12 +83,20 @@
     }).join("");
     return '' +
 '<div class="pm-home">' +
-'<section class="pmh-hero"><div class="in">' +
+'<section class="pmh-hero"><div class="in"><div class="pmh-hero-grid">' +
+'<div class="pmh-hero-text">' +
 '<span class="eyebrow">Pneumašiny.cz &#8211; REMA TIP TOP INCO</span>' +
 '<h1>Kompletní vybavení <em>pneuservisu</em> z jednoho místa</h1>' +
 '<p>Montážní stroje, vyvažovačky, zvedáky, kompresory, geometrie i sušení. Špičkové evropské značky pro autoservisy a pneuservisy, na objednávku s dodací lhůtou přímo od výrobce.</p>' +
 '<div class="pmh-cta"><a class="btn btn-red" href="/montazni-stroje/">Procházet stroje &rarr;</a>' +
 '<a class="btn btn-ghost" href="/kompresory/">Kompresory</a></div>' +
+'</div>' +
+'<div class="pmh-hero-media"><div class="pmh-hero-card">' +
+'<span class="pmh-tag">Na objednávku</span>' +
+'<div class="pmh-hero-imgwrap"><img src="' + PCDN + 'cemb-smt56-matic.jpg" alt="Nákladní zouvačka CEMB SMT 56"></div>' +
+'<div class="pmh-hero-cap"><b>CEMB SMT 56</b><span>Nákladní zouvačka</span></div>' +
+'</div></div>' +
+'</div>' +
 '<div class="pmh-stats">' +
 '<div><div class="n">16</div><div class="l">značek</div></div>' +
 '<div><div class="n">8</div><div class="l">kategorií strojů</div></div>' +
@@ -126,7 +135,18 @@
     host.setAttribute("data-pm-home", "1");
   }
 
+  /* ---- Brand wordmark: replace default Shoptet logo on every page ---------- */
+  function brandLogo() {
+    var a = document.querySelector('a[data-testid="linkWebsiteLogo"]') ||
+            document.querySelector('.logo a, a.logo');
+    if (!a || a.querySelector(".pm-wordmark")) return;
+    a.innerHTML =
+      '<span class="pm-wordmark">PNEUMAŠINY<em>.cz</em>' +
+      '<span class="pm-wordmark-sub">stroje pro pneuservisy</span></span>';
+  }
+
   function run() {
+    try { brandLogo(); } catch (e) {}
     try { onHomepage(); } catch (e) {}
     try { onProductDetail(); } catch (e) {}
     try { onCart(); } catch (e) {}
