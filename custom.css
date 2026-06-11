@@ -29,12 +29,19 @@ a{color:var(--pm-ink)}a:hover{color:var(--pm-red)}
 .search .btn:hover,.search button:hover,.btn-default:hover{background:var(--pm-red)!important;border-color:var(--pm-red)!important}
 /* ---- main menu / mega-menu : ink bar, light tracked labels, gold hover ---- */
 .navigation-in.menu,.navigation-in,.header .navigation-in,#navigation .navigation-in{background:var(--pm-ink)!important;border-bottom:none!important}
-.navigation-in.menu a,.menu-level-0>li>a,.navigation-in a{color:rgba(255,255,255,.92)!important;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
-.navigation-in.menu a:hover,.menu-level-0>li>a:hover{color:var(--pm-gold-l)!important;background:rgba(255,255,255,.06)}
-.menu-level-0>li.active>a,.navigation-in.menu li.active>a{color:#fff!important}
-.menu-level-1,.submenu,.menu-level-0 .menu-wrapper{background:#fff!important}
-.menu-level-1 a,.submenu a{color:var(--pm-ink2)!important}
-.menu-level-1 a:hover,.submenu a:hover{color:var(--pm-red)!important;background:var(--pm-alt)!important}
+/* top-level horizontal bar = ul.menu-level-1 (template root is 62.5% → use px).
+   NOTE: link text sits in a <b>; the template sets font-size on that <b>, so the
+   <b> must be targeted directly (the <a> rule alone is ignored). */
+ul.menu-level-1{background:transparent!important}
+ul.menu-level-1>li>a{color:rgba(255,255,255,.92)!important}
+ul.menu-level-1>li>a b{font-size:13px!important;letter-spacing:.02em;text-transform:none;font-weight:600;color:rgba(255,255,255,.92)!important}
+ul.menu-level-1>li>a:hover b{color:var(--pm-gold-l)!important}
+ul.menu-level-1>li>a:hover{background:rgba(255,255,255,.06)}
+ul.menu-level-1>li.active>a b{color:#fff!important}
+/* dropdown panel = menu-level-2 : white bg, ink text */
+.menu-level-2,.submenu{background:#fff!important}
+.menu-level-2 a,.menu-level-2 a b,.submenu a{color:var(--pm-ink2)!important;font-size:13px!important;text-transform:none;letter-spacing:0}
+.menu-level-2 a:hover,.menu-level-2 a:hover b,.submenu a:hover{color:var(--pm-red)!important;background:var(--pm-alt)!important}
 /* ---- breadcrumb ---- */
 .breadcrumbs-wrapper,.breadcrumbs{font-size:.74rem;letter-spacing:.04em;color:var(--pm-muted)}
 .breadcrumbs-wrapper a:hover{color:var(--pm-red)}
